@@ -1,0 +1,149 @@
+$color1:gray;
+$color2:white;
+$pixel: 4px;
+$porcentaje: 100%;
+
+@mixin display {
+    display: flex;
+}
+
+body {
+    background-color: $color2;
+    position: relative;
+    margin: 0;
+    padding:$pixel*2 ;
+}
+header{
+    position: fixed;
+    z-index: 2;
+    width:$porcentaje ;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: $pixel*5; 
+    @include display();
+}
+
+h1 { 
+    color: rgba(255, 0, 0, 0.596);
+    font-family: 'Numans', sans-serif;
+    font-weight:bold;
+    font-size:$pixel*5 ;
+    } 
+header nav{ 
+    @include display();
+}
+
+header nav a {
+        font-family: 'Cormorant Garamond', serif;;
+        color:$color1;
+ 
+        font-size: 15;
+        initial-letter-align:4px;
+
+        text-decoration: none;
+        padding: $pixel*5;
+}
+
+
+.element img{
+        border: none ;
+        padding:3%;
+        float: right ;
+        top:$porcentaje ;
+        left: $porcentaje;
+        display:block;
+        width: $porcentaje -(30);
+        height:$porcentaje -(30) ;
+}
+
+
+
+
+.imgposition{
+    padding-top:$porcentaje/10 ;
+    padding-bottom: $porcentaje/10;
+    overflow:hidden;
+}
+.imgposition img{
+    @include display();
+    margin: 0 auto;
+}
+
+
+ 
+.carousel-item {
+    border: none ;
+    text-align: center;
+    padding:$porcentaje/20;
+    padding-bottom: $porcentaje/20;
+    
+    top: $porcentaje -(65);
+    left: $porcentaje -(65);
+    
+    
+    width: $porcentaje -(70);
+    height: $porcentaje -(70);
+    animation: duration 1s;
+} 
+
+
+.btn-light {
+    color:$color1;
+    justify-content: end;
+}
+ 
+
+.grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: repeat(3, 2fr);
+    grid-column-gap: 1%;
+    grid-row-gap: 1%;
+    
+    
+    
+}
+.grid-item img {
+    padding-top: 20%;
+    padding-bottom: 10%;
+    
+}
+
+.transform {
+    color: $color2;
+}
+
+.ingreso { 
+    
+    background: $color2;
+    padding-top: 1%;
+    font-family: 'Numans', sans-serif;
+    color: $color1;
+    font-weight:bold;
+    font-size:$pixel*5;
+    
+}
+
+footer {
+    background:$color1;
+    color:$color2;
+     flex-direction: column;
+    align-items: center;
+    @include display();
+}
+
+@media only screen and (max-width: 360px) { 
+    nav a .navbar.navbar-1 .navbar-toggler-icon {
+        background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
+        }
+   
+    img  {
+        image-resolution: 20px;
+    }
+footer {
+    width: auto;
+        height: auto;
+}
+
+}
